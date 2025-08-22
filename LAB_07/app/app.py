@@ -11,7 +11,7 @@ class App:
         B = Vector(3)
         C = Vector(4)
         D = Vector(4)
-        Z = Vector(5)
+        R = Vector(5)
 
         print("The number of dimensions of vector A are:")
         print(len(A), "\n")
@@ -49,5 +49,5 @@ class App:
         print(E, "\n")
 
         # Displaying Vector attributes as String
-        print("Coordinates of Vector Z as string:")
-        print(Z, "\n")   # Z.__str__()
+        print("Coordinates of Vector R as string:")
+        print(R, "\n")   # R.__str__()
