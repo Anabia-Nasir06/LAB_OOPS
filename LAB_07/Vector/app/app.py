@@ -1,5 +1,4 @@
-# app/app.py
-from vector import Vector  # file ka naam vector.py ho
+from vector import Vector 
 
 class App:
     def __init__(self):
