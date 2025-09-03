@@ -17,7 +17,7 @@ class App:
 
         # Equality
         print("Do Vectors A", A, "and B", B, "have the same coordinates ?")
-        print(A.__eq__(B), "\n")  
+        print(A==B, "\n")  
 
         print("Original coordinates of vector C:""\n",C, "\n")
 
