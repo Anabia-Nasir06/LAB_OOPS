@@ -30,4 +30,4 @@ class WordCount:
         return [[self._unique_words[i], self._word_frequencies[i]] for i in range(len(self._unique_words))]
 
     def __str__(self):
-        return f"SearchQueryAnalyzer(search_query='{self._search_query}')"
+        return f"Query='{self._search_query}'"

@@ -2,15 +2,17 @@ from wordcount import WordCount
 
 class App: 
     def run(self):
-        print("==== WORD COOUNTER ====")
+        print("\n==== WORD COOUNTER ====\n")
         # Initial query analysis
         query = WordCount("best pizza best restaurant best service")
+        print(query)
         query.word_counter()
-        print(query.word_frequencies)
+        print("Word count:",query.word_frequencies, "\n")
 
 
         # Changing query
-        query.search_query = "grape mango grape"
+        query.search_query = "buy phone buy charger"
+        print(query)
         query.word_counter()
-        print(analyzer.word_frequencies)
+        print("Word count:",query.word_frequencies)
 
