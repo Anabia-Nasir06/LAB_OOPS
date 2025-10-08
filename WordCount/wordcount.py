@@ -24,6 +24,7 @@ class WordCount:
             else:
                 self._unique_words.append(word)
                 self._word_frequencies.append(1)
+        return self.word_frequencies
 
     @property
     def word_frequencies(self):

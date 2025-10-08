@@ -6,13 +6,11 @@ class App:
         # Initial query analysis
         query = WordCount("best pizza best restaurant best service")
         print(query)
-        query.word_counter()
-        print("Word count:",query.word_frequencies, "\n")
+        print("Word count:",query.word_counter(), "\n")
 
 
         # Changing query
         query.search_query = "buy phone buy charger"
         print(query)
-        query.word_counter()
-        print("Word count:",query.word_frequencies)
+        print("Word count:",query.word_counter())
 
