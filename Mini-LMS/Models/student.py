@@ -2,8 +2,8 @@ from Models.person import Person
 from Management.courselist import CourseList
 
 class Student(Person):
-    def __init__(self, name: str, id: str, seat_no: str):
-        super().__init__(name, id)        # call Person constructor
+    def __init__(self, name: str, seat_no: str):
+        super().__init__(name)        # call Person constructor
         self.__seat_no = seat_no
         self.__courses = CourseList()    # composition → student owns a list of courses
 

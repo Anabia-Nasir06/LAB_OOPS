@@ -73,9 +73,13 @@ class App:
             for j in range(course_count):
                 cname = input(f"  Course {j+1} name: ")
                 ccode = input(f"  Course {j+1} code: ")
-                course = Course(cname, ccode)
+
+                course = self.courses.searchByCode(ccode)
+                if not course:
+                    course = Course(name, code)
+                    self.courses.addCourse(course)
+
                 student.enroll_course(course)
-                self.courses.addCourse(course)
 
             self.students.add_student(student)
             print(f"Student '{student.name}' added successfully.")
@@ -103,9 +107,13 @@ class App:
 
         cname = input("Enter course name: ")
         ccode = input("Enter course code: ")
-        course = Course(cname, ccode)
+
+        course = self.courses.searchByCode(ccode)
+        if not course:
+            course = Course(cname, ccode)
+            self.courses.addCourse(course)
+
         student.enroll_course(course)
-        self.courses.addCourse(course)
         print(f"Course '{course.name}' added to student '{student.name}'.")
 
     def drop_course_from_student(self):
@@ -116,8 +124,12 @@ class App:
             return
 
         ccode = input("Enter course code to remove: ")
-        student.drop_course(ccode)
-        print(f"Course '{ccode}' removed from student '{student.name}'.")
+        course = student.courses.searchByCode(ccode)
+        if course:
+            student.drop_course(ccode)
+            print(f"Course '{course.name}' removed from student '{student.name}'.")
+        else:
+            print(f"Course with code '{ccode}' not found for this student.")
 
     def search_student_by_name(self):
         name = input("Enter name to search: ")
@@ -138,5 +150,3 @@ class App:
             print("Student not found.")
 
 
-if __name__ == "__main__":
-    App().run()
